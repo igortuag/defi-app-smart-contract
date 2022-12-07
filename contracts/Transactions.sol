@@ -10,5 +10,14 @@ contract Transactions {
     uint256 timestamp,
     string keyword
   ) {
+
+    function publishTransaction(
+      address receiver,
+      uint amount,
+      string memory message,
+      string memory keyword
+    ) public {
+      emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
+    }
   }
 }
